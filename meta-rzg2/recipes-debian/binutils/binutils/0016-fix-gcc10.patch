@@ -1,0 +1,51 @@
+diff --git a/gold/errors.h b/gold/errors.h
+index c26b5586379..ac681e965bb 100644
+--- a/gold/errors.h
++++ b/gold/errors.h
+@@ -25,6 +25,8 @@
+ 
+ #include <cstdarg>
+ 
++#include <string>
++
+ #include "gold-threads.h"
+ 
+ namespace gold
+
+--- a/binutils/coffdump.c 2021-11-03 19:21:23.158868281 +0900
++++ b/binutils/coffdump.c 2021-11-03 19:21:27.817355584 +0900
+@@ -456,7 +456,7 @@
+     dump_coff_section (ptr->sections + i);
+ }
+ 
+-char * program_name;
++extern char * program_name;
+ 
+ static void
+ show_usage (FILE *file, int status)
+
+
+--- a/binutils/sysdump.c 2018-06-25 03:38:57.000000000 +0900
++++ b/binutils/sysdump.c 2021-11-03 19:22:12.979363108 +0900
+@@ -633,7 +633,7 @@
+     }
+ }
+ 
+-char *program_name;
++extern char *program_name;
+ 
+ ATTRIBUTE_NORETURN static void
+ show_usage (FILE *ffile, int status)
+
+
+--- a/binutils/srconv.c 2018-06-25 03:38:57.000000000 +0900
++++ b/binutils/srconv.c 2021-11-03 19:21:50.467130999 +0900
+@@ -1687,7 +1687,7 @@
+     }
+ }
+ 
+-char *program_name;
++extern char *program_name;
+ 
+ ATTRIBUTE_NORETURN static void
+ show_usage (FILE *ffile, int status)
